@@ -10,15 +10,15 @@ TiUI.adjustContentHeight = function()
 	
 	if (tab == 'block' && submenu == 'block')
 	{
-		$('#tiui_content_body').css('top','104px')
+		$('#tiui_content_body').css('top','117px')
 	}
 	else if (tab == 'none' && submenu == 'none')
 	{
-		$('#tiui_content_body').css('top','53px')
+		$('#tiui_content_body').css('top','65px')
 	}
 	else
 	{
-		$('#tiui_content_body').css('top','74px')
+		$('#tiui_content_body').css('top','87px')
 	}
 };
 
@@ -299,7 +299,7 @@ TiUI.GreyButtonBar = function()
 		this.tabOrButton = (options.tabOrButton)?options.tabOrButton:'button';
 		this.active = options.active;
 		this.imageOffset = (options.imageOffset)?options.imageOffset:'3px';
-		this.tabItemWidth = (options.tabItemWidth)?options.tabItemWidth:30;
+		this.tabItemWidth = (options.tabItemWidth)?options.tabItemWidth:50;
 
 		//
 		// create markup
@@ -352,8 +352,9 @@ TiUI.GreyButtonBar = function()
 		//
 		// adjust width based on tab count
 		//
-		this.width = (this.tabs.length * this.tabItemWidth ) + (this.tabs.length+1);
-		$('#'+this.id).css('width',this.width + 'px');
+		//this.width = (this.tabs.length * this.tabItemWidth ) + (this.tabs.length+1);
+		//$('#'+this.id).css('width',this.width + 'px');
+
 		
 		//
 		// Add title text if specified
@@ -476,7 +477,7 @@ TiUI.MainTab = function()
 	this.hide = function()
 	{
 		$('#tiui_tabbar').css('display','none');
-		$('#tiui_content_body').css('border','1px solid #404040');
+		$('#tiui_content_body').css('border-top','1px solid #000');
 		TiUI.adjustContentHeight();
 	};
 	

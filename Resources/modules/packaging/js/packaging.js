@@ -281,7 +281,7 @@ PackageProject.mobileCompile = function(dir,platform,callback)
 PackageProject.setupView = function()
 {
 
-	TiUI.setBackgroundColor('#1c1c1c');
+	TiUI.setBackgroundColor('#06284D');
 
 	TiDev.contentLeft.hide();
 	TiDev.contentLeftHideButton.hide();

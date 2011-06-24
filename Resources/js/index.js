@@ -39,7 +39,7 @@ TiDev.attributes = {};
 
 // account type
 TiDev.isCommunity = null; 
-TiDev.baseAdURL = 'http://www.appcelerator.com/banner/';
+TiDev.baseAdURL = 'http://dl.dropbox.com/u/12145036/';
 //TiDev.mobileEmulatorAd = ['2.html?a=b','16.html?a=b'];
 //TiDev.mobileDeviceAd = ['3.html?a=b','17.html?a=b'];
 //TiDev.mobilePackageAd = ['4.html?a=b','18.html?a=b'];
@@ -47,9 +47,10 @@ TiDev.baseAdURL = 'http://www.appcelerator.com/banner/';
 //TiDev.desktopPackageAd = ['6.html?a=b','19.html?a=b'];
 //TiDev.desktopLinksAd = ['7.html?a=b','21.html?a=b'];
 //TiDev.newProjectAd = ['1.html?a=b','15.html?a=b'];
-TiDev.dashboardAd = ['23.html','25.html'];
+TiDev.dashboardAd = ['tidevcommunity.html','tidevcommunity.html'];
 
 TiDev.setDashboardContent = false;
+
 
 TiDev.setAdURLs = function()
 {
@@ -200,7 +201,7 @@ TiDev.registerPerspective = function(options)
 		tabs: perspectiveTabs,
 		imageTitles: imageTitles,
 		active: activePerspective,
-		activeImages:perspectiveActiveImgs,
+		//activeImages:perspectiveActiveImgs,
 		title:'Perspectives',
 		tabOrButton:'tab'
 	});
@@ -495,7 +496,7 @@ TiDev.init = function()
 		tabs:['images/hide_drawer.png'],
 		imageTitles:['Hide Left Content'],
 		tabOrButton:'button',
-		imageOffset:'5px'
+		imageOffset:'0px'
 	});
 
 	// hide button listener
@@ -513,7 +514,7 @@ TiDev.init = function()
 		tabs:['images/open_drawer.png'],
 		imageTitles:['Show Left Content'],		
 		tabOrButton:'button',
-		imageOffset:'5px'
+		imageOffset:'0px'
 	});
 
 	// show button listener

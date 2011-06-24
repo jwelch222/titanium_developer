@@ -101,19 +101,19 @@
 			}
 			// D - dashboard
 			if ((event.ctrlKey || event.metaKey) && event.keyCode == 68) {
-				TiDev.subtabChange(0, true);
+				TiDev.subtabChange(0);
 			}
 			// P - project properties
 			if ((event.ctrlKey || event.metaKey) && event.keyCode == 80) {
-				TiDev.subtabChange(1, true);
+				TiDev.subtabChange(1);
 			}
 			// E - code editor
 			if ((event.ctrlKey || event.metaKey) && event.keyCode == 69) {
-				TiDev.subtabChange(2, true);
+				TiDev.subtabChange(2);
 			}
 			// T - test and package
 			if ((event.ctrlKey || event.metaKey) && event.keyCode == 84) {
-				TiDev.subtabChange(3, true);
+				TiDev.subtabChange(3);
 			}
 		});
 	});
@@ -133,26 +133,29 @@
 <body>
 	<!-- HEADER -->
 	<div id="tiui_header">
-		<div id="tiui_message_area"></div>
+		<div id="tiui_perspective_bar"></div>
+		
+		<div id="tiui_action_button_bar">
+			<div class="action_separator"></div>
+			<div class="action_button" id="new_project_button">
+				<div><img src="images/new_project.png"/></div>
+				<span class="tiui-button-tab-title"><u>N</u>ew Project</span>
+			</div>
+			<div class="action_button" id="import_project_button">
+				<div><img src="images/import_project.png"/></div>
+				<span class="tiui-button-tab-title"><u>I</u>mport Project</span>
+			</div>
+			<div class="action_separator"></div>
+		</div>
 		
 		<div id="tiui_projects_selector">
 			<span class="tiui-button-tab-title">Projects:</span>
 			<select id="projects_selector">
 				<option>Loading...</option>
 			</select>
-			
 		</div>
-		<div id="tiui_perspective_bar"></div>
-		<div id="tiui_action_button_bar">
-			<div class="action_button" id="new_project_button">
-				<div><img src="images/new_project_2.png"/></div>
-				<span class="tiui-button-tab-title"><u>N</u>ew Project</span>
-			</div>
-			<div class="action_button import_project_button">
-				<div><img src="images/import_project_2.png"/></div>
-				<span class="tiui-button-tab-title"><u>I</u>mport Project</span>
-			</div>
-		</div>
+		
+		<div id="tiui_message_area"></div>
 	</div>
 	
 	<!-- SECONDARY TAB BAR -->

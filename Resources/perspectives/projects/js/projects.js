@@ -206,7 +206,7 @@ Projects.setupPostLoginView = function()
 	// reset UI components
 	$('body').css('opacity','0')
 	$('#tiui_header').css('display','block');
-	$('#tiui_content_body').css('top','74px');
+	$('#tiui_content_body').css('top','87px');
 	Titanium.UI.currentWindow.setHeight(620);
 	Titanium.UI.currentWindow.setResizable(true);
 	$('body').animate({'opacity':'1.0'},1400);
@@ -223,7 +223,8 @@ Projects.showLogin = function()
 {
 	Projects.needLogin = true;
 	
-	TiUI.setBackgroundColor('#575757');
+	//TiUI.setBackgroundColor('#575757');
+	TiUI.setBackgroundColor('#06284D');
 	
 	// format window
 	$('#tiui_header').css('display','none');
@@ -541,7 +542,7 @@ Projects.showLogin = function()
 //
 Projects.setupView = function(options)
 {
-	TiUI.setBackgroundColor('#1c1c1c');
+	TiUI.setBackgroundColor('#06284D');
 	
 	// see if user has registered
  	try
@@ -610,6 +611,7 @@ Projects.setupView = function(options)
 			};
 			// login
 			TiDev.invokeCloudService(Projects.ssoLoginURL,{un:email,pw:password,mid:Titanium.platform.id},'POST',loginOK, loginFailed);
+			// autoselect Dashboard
 		}
 		else
 		{
@@ -1033,7 +1035,7 @@ Projects.handleImportClick = function()
 //
 // Import click listener - for main import
 //
-$('.import_project_button').click(function()
+$('#import_project_button').click(function()
 {
 	Projects.handleImportClick();
 });
@@ -1097,10 +1099,10 @@ Projects.handleNewProjectClick = function()
 	TiDev.contentLeftShowButton.hide();
 	TiDev.contentLeftHideButton.hide();
 	TiDev.contentLeft.hide();
-	TiUI.setBackgroundColor('#1c1c1c');
+	TiUI.setBackgroundColor('#06284D');
 	TiDev.subtabs.hide();
 	$('#tiui_content_submenu').hide();
-	$('#tiui_content_body').css('top','53px');
+	$('#tiui_content_body').css('top','65px');
 	
 	var file = Titanium.Filesystem.getFile(Titanium.App.appURLToPath('perspectives/projects/new_project.html'));
 	$('#tiui_content_right').get(0).innerHTML = file.read();
@@ -1931,9 +1933,10 @@ Projects.createProject = function(options, createProjectFiles)
 //
 TiDev.registerPerspective({
 	name:'projects',
+	title:'Projects',
 	active:true,
 	image:'perspectives/projects/images/projects.png',
-	activeImage:'perspectives/projects/images/projects_active.png',
+	//activeImage:'perspectives/projects/images/projects_active.png',
 	imageTitle:'Projects',
 	html:'projects.html',
 	callback:Projects.eventHandler,

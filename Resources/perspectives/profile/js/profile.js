@@ -13,8 +13,9 @@ Profile.eventHandler = function(event)
 }
 TiDev.registerPerspective({
 	name:'profile',
+	title:'Profile',
 	image:'perspectives/profile/images/profile.png',
-	activeImage:'perspectives/profile/images/profile_active.png',
+	//activeImage:'perspectives/profile/images/profile_active.png',
 	callback:Profile.eventHandler,
 	imageTitle:'Profile',
 	idx:2,

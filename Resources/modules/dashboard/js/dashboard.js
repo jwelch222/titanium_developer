@@ -27,6 +27,7 @@ Dashboard.eventHandler = function(event)
 //
 Dashboard.setupView = function()
 {
+	TiUI.setBackgroundColor('#06284D');
 	TiDev.contentLeft.hide();
 	TiDev.contentLeftHideButton.hide();
 	TiDev.contentLeftShowButton.hide();

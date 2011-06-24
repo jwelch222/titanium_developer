@@ -22,7 +22,7 @@ EditProject.setFormData = function(p)
 	EditProject.currentProject = p;
 
 	// set default UI state
-	TiUI.setBackgroundColor('#1c1c1c');
+	TiUI.setBackgroundColor('#06284D');
 	TiDev.contentLeft.hide();
 	TiDev.contentLeftHideButton.hide();
 	TiDev.contentLeftShowButton.hide();	

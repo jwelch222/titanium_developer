@@ -159,7 +159,7 @@ UserProfile.setFormData = function()
 
 UserProfile.setupView = function()
 {
-	TiUI.setBackgroundColor('#1c1c1c');
+	TiUI.setBackgroundColor('#06284D');
 	TiDev.contentLeft.hide();
 	TiDev.contentLeftHideButton.hide();
 	TiDev.contentLeftShowButton.hide();		

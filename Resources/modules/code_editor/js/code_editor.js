@@ -8,7 +8,7 @@ CodeEditor.buttonBar = new TiUI.BlackButtonBar();
 CodeEditor.setupView = function()
 {
 	// set default UI state
-	TiUI.setBackgroundColor('#161616');
+	TiUI.setBackgroundColor('#06284D');
 	TiDev.contentLeft.show();
 	TiDev.contentLeftHideButton.show();
 	TiDev.contentLeftShowButton.hide();
