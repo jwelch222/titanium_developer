@@ -72,7 +72,7 @@ TiDev.registerModule({
 	displayName: 'Code <u>E</u>ditor',
 	perspectives:['projects'],
 	html:'code_editor.html',
-	idx:2,
+	idx:3,
 	//active:true,
 	callback:CodeEditor.eventHandler
 });

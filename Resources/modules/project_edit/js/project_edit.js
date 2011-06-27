@@ -520,7 +520,7 @@ TiDev.registerModule({
 	displayName: '<u>P</u>roject Properties',
 	perspectives:['projects'],
 	html:'project_edit.html',
-	idx:1,
+	idx:2,
 	callback:EditProject.eventHandler
 });
 

@@ -32,7 +32,7 @@
 {
 	width:135px;
 	height:30px;
-	background-color:#1e1e1e !important;
+	/*background-color:#1e1e1e !important;*/
 	cursor:pointer;
 	float:left;
 	margin-right:10px;
@@ -40,9 +40,11 @@
 }
 #packaging .option.active
 {
-	background-color:#5A5A5A !important;
+	/*background-color:#5A5A5A !important;*/
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
 		
 }
 #packaging .option img
@@ -153,7 +155,9 @@
 #packaging .detail
 {
 	clear:both;
-	background-color:#5a5a5a;
+	/*background-color:#5a5a5a;*/
+	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
 	padding:20px;
 	position:relative;
 	min-width:300px;

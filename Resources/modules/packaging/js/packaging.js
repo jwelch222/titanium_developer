@@ -2929,7 +2929,7 @@ TiDev.registerModule({
 	displayName: '<u>T</u>est & Package',
 	perspectives:['projects'],
 	html:'packaging.html',
-	idx:3,
+	idx:4,
 	callback:PackageProject.eventHandler
 });
 

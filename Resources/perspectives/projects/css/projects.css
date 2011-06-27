@@ -7,7 +7,7 @@
 {
 	margin-top:0px;
 	font-weight:normal;
-	font-size:25px;
+	font-size:21px;
 	margin-bottom:20px;
 	color:#999;
 }
@@ -22,6 +22,12 @@
 	font-size:15px;
 	margin-top:10px;
 	margin-bottom:30px;
+}
+#projects .frame, #user_profile .frame
+{
+	border-radius: 5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
 }
 #projects .option
 {

@@ -13,3 +13,9 @@
 	text-decoration:underline;
 	cursor:pointer;
 }
+
+#user_profile_name
+{
+	text-shadow: 3px 3px 3px black;
+	font-size:21px;
+}

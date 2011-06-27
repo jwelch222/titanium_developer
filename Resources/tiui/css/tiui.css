@@ -63,8 +63,8 @@ body.win32 #tiui_header, body.linux #tiui_header
 	color:#000;
 	font-size:12px;
 	position:relative;
-	background-image:url(../../images/texturegrey.png);
-	border-top:1px solid #000;
+	/*background-image:url(../../images/texturegrey.png);
+	border-top:1px solid #000;*/
 }
 
 
@@ -74,13 +74,14 @@ body.win32 #tiui_header, body.linux #tiui_header
 #tiui_projects_selector
 {
 	position:absolute;
-	left:426px;
-	top:15px;
+	left:260px;
+	top:10px;
 	width:200px;
 	height:40px;
 }
 #projects_selector
 {
+	margin-top:4px;
 	width:198px;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
@@ -106,7 +107,7 @@ body.win32 #tiui_header, body.linux #tiui_header
 #tiui_action_button_bar
 {
 	position:absolute;
-	left:160px;
+	left:10px;
 	top:3px;
 	width:260px;
 	height:58px;
@@ -153,7 +154,7 @@ body.win32 #tiui_header, body.linux #tiui_header
 #tiui_message_area
 {
 	position:absolute;
-	top:10px;
+	top:5px;
 	right:20px;
 	cursor:pointer;
 }
@@ -169,6 +170,7 @@ body.win32 #tiui_header, body.linux #tiui_header
 	left:0;
 	right:0;
 	bottom:30;
+	background-image:url(../../images/texturegrey.png);
 }
 #tiui_content_left
 {
@@ -198,6 +200,7 @@ body.win32 #tiui_header, body.linux #tiui_header
 	position:absolute;
 	width:22px;
 	right:0;
+	top:2px;
 }
 
 /*****************************
@@ -397,32 +400,38 @@ body.win32 #tiui_footer, body.linux #tiui_footer
 
 .tiui-secondary-tabbar
 {
-	height:21px;
+	height:24px;
 	background:url(../images/secondary_tab_bg.png) repeat-x;
-	border-bottom:1px solid #404040;
+	/*border-bottom:1px solid #404040;*/
 }
 .tiui-secondary-tabbar .tab
 {
-	height:21px;
-	background:url(../images/secondary_tab.png) repeat-x;
+	height:23px;
+	/*background:url(../images/secondary_tab.png) repeat-x;*/
 	text-align:center;
 	width:120px;
 	font-size:11px;
 	color:#000;
-	line-height:22px;
+	line-height:24px;
 	float:left;
-	border-left:1px solid #656565;
+	/*border-left:1px solid #656565;*/
+	/*border-left:1px solid transparent;
+	border-right:1px solid transparent;*/
 	position:relative;
 	z-index:2;
 	cursor:pointer;
 }
-.tiui-secondary-tabbar .tab:hover, .tiui-secondary-tabbar .tab.active
+/*.tiui-secondary-tabbar .tab:hover,*/
+.tiui-secondary-tabbar .tab.active
 {
-	background:url(../images/secondary_tab_active.png) repeat-x;	
+	background:url(../images/secondary_tab_active.png) repeat-x;
+	font-weight:bold;
+	/*border-left:1px solid #656565;
+	border-right:1px solid #656565;	*/
 }
 .tiui-secondary-tabbar .tab.right
 {
-	border-right:1px solid #656565;
+	/*border-right:1px solid #656565;*/
 }
 /********************************
  * Content Tab Bar - Black
@@ -488,15 +497,15 @@ body.win32 #tiui_footer, body.linux #tiui_footer
  ********************************/
 .tiui-message-area-container
 {
-	/*border:1px solid #56584c;
+	border:1px solid #56584c;
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
-	height:40px;
+	height:42px;
 	border-bottom:1px solid #d5d5d5;
 	border-left:1px solid #959985;
-	border-right:1px solid #959985;*/
+	border-right:1px solid #959985;
 	
 }
 body.win32 .tiui-message-area-container, body.linux .tiui-message-area-container
@@ -513,12 +522,12 @@ body.win32 .tiui-message-area-container, body.linux .tiui-message-area-container
 	-webkit-border-bottom-right-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
 	/*border:1px solid #cbd0b5;*/
-	color:#4c4c45;
+	/*color:#4c4c45;*/
 	font-size:12px;
 	text-align:center;
-	line-height:40px;
+	line-height:42px;
 	/*border-top:1px solid #b6baa3;*/
-	height:40px;
+	height:42px;
 }
 
 /********************************

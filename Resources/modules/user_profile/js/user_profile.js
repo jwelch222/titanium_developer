@@ -327,9 +327,9 @@ UserProfile.eventHandler = function(event)
 TiDev.registerModule({
 	name:'user_profile',
 	displayName: 'Edit Profile',
-	perspectives:['profile'],
+	perspectives:['projects'],
 	html:'user_profile.html',
-	active:true,
-	idx:0,
+	active:false,
+	idx:1,
 	callback:UserProfile.eventHandler
 });
