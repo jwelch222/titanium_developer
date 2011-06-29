@@ -1,9 +1,10 @@
-1.3.02 (2011-06-24) - (Not closed Yet)
+1.3.02 (2011-06-29) - (Not closed Yet)
 	
 	-Providing installation packages (Dist folder)
 	-Add Keyboard shotcut for "Fullscreen" function
 	-Adding files will be needed to the list files of project
-	-Change the theme (in progress)
+	-Change the theme
+	-New detection of iOS SDK for iPad
 	
 
 1.3.01 (2011-06-22) - Now, from this version the updates made by the community:
