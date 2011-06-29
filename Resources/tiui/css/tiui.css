@@ -166,7 +166,7 @@ body.win32 #tiui_header, body.linux #tiui_header
 #tiui_content_body
 {
 	position:fixed;
-	top:87px;
+	top:88px;
 	left:0;
 	right:0;
 	bottom:30;
@@ -288,21 +288,19 @@ body.win32 #tiui_footer, body.linux #tiui_footer
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
-	border:1px solid #7f7f7f;
+	-webkit-box-shadow: 0 0 6px #000;
 	text-align:center;
 	font-size:12px;
 	line-height:20px;
 	padding-left:5px;
 	padding-right:5px;
 	cursor:pointer;
-	color:#222;
+	color:#111;
 }
 .tiui-button.grey.active
 {
 	background:url(../images/grey_button_pressed.png) repeat-x;
 	height:19px;
-	border:1px solid #7f7f7f;
-		
 }
 
 .tiui-button.grey.disabled

@@ -18,7 +18,7 @@ TiUI.adjustContentHeight = function()
 	}
 	else
 	{
-		$('#tiui_content_body').css('top','87px')
+		$('#tiui_content_body').css('top','88px')
 	}
 };
 

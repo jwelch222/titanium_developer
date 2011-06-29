@@ -98,7 +98,7 @@ EditProject.setFormData = function(p)
 		}
 		$('#desktop_icon').css('display','none');
 		$('#project_edit_lang_modules').css('display','none');
-		$('#project_edit .frame').css('height','320px');
+		$('#project_edit .frame').css('height','310px');
 
 		// populate select
 		var versions = Titanium.Project.getMobileSDKVersions();
@@ -121,7 +121,7 @@ EditProject.setFormData = function(p)
 		}
 		$('#edit_project_runtime').html(html);
 		
-		$('#project_edit .frame').css('height','350px');
+		$('#project_edit .frame').css('height','380px');
 
 		$('#project_edit_lang_modules').css('display','block');
 		

@@ -529,7 +529,7 @@ Titanium.Project =
 			}
 			else
 			{
-				index.write('<html><head>'+head+'</head><body style="background-color:#1c1c1c;margin:0"><div style="border-top:1px solid #404040"><div style="color:#fff;;padding:10px">Welcome to Titanium</div></div></body></html>');
+				index.write('<html><head>'+head+'</head><body style="background-color:#1c1c1c;margin:0"><div style="border-top:1px solid #404040"><div style="color:#fff;;padding:10px">Welcome to TiDev Community</div></div></body></html>');
 			}
 		}
 		

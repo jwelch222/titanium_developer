@@ -206,7 +206,7 @@ Projects.setupPostLoginView = function()
 	// reset UI components
 	$('body').css('opacity','0')
 	$('#tiui_header').css('display','block');
-	$('#tiui_content_body').css('top','87px');
+	$('#tiui_content_body').css('top','88px');
 	Titanium.UI.currentWindow.setHeight(620);
 	Titanium.UI.currentWindow.setResizable(true);
 	$('body').animate({'opacity':'1.0'},1400);
@@ -1179,7 +1179,8 @@ Projects.handleNewProjectClick = function()
 		
 		if ($(this).val()=='ipad' || $(this).val()=='universal')
 		{	
-			$('#mobile_platforms').css('display','none');
+			$('#mobile_platforms').css('display','block');
+			$('#platform_android').css('display','none');
 			$('#desktop_language_modules').css('display','none');
 			if (Projects.hasIPad ==false)
 			{
@@ -1195,12 +1196,22 @@ Projects.handleNewProjectClick = function()
 					{
 						Projects.hasIPad = true;
 					}
-					TiDev.resetConsole();
-					if (!Projects.hasIPad)
+					//TiDev.resetConsole();
+					if (Projects.hasIPad)
 					{
+						TiDev.setConsoleMessage('Success!  iOS SDK was found.');
+						$('#iphone_sdk_true').css('display','block');
+						$('#iphone_sdk_false').css('display','none');
+					}else{
+						TiDev.setConsoleMessage('iOS SDK 3.2 or greater was not found.');
+						$('#iphone_sdk_true').css('display','none');
+						$('#iphone_sdk_false').css('display','block');
 						alert('The iPad requires version 3.2 of the iOS SDK.  Please install to continue');
-						$('#new_project_type').val('desktop')
 					}
+					setTimeout(function()
+					{
+						TiDev.resetConsole();
+					},2000);
 				});
 				iPadCheck.launch();
 			}
@@ -1208,6 +1219,7 @@ Projects.handleNewProjectClick = function()
 		else if ($(this).val() == 'mobile')
 		{
 			$('#mobile_platforms').css('display','block');
+			$('#platform_android').css('display','block');
 			$('#desktop_language_modules').css('display','none');
 
 			if (Projects.hasRunMobileCheck == false)
