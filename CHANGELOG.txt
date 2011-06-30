@@ -5,6 +5,7 @@
 	-Adding files will be needed to the list files of project
 	-Change the theme
 	-New detection of iOS SDK for iPad
+	-A lot of old and unused stuff was removed to clean the project
 	
 
 1.3.01 (2011-06-22) - Now, from this version the updates made by the community:
