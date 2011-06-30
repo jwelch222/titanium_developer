@@ -37,15 +37,16 @@ CodeEditor.loadProjectFiles = function()
 	CodeEditor.currentProject = Projects.getProject();
 	var resources = Titanium.Filesystem.getFile(CodeEditor.currentProject.dir,"Resources");
 	
-	
-	
+
 	jst_arrNodes = [];
 	tmpArr = [];
 	
 	
 	jst_arrNodes.push([]);
 	jst_arrNodes[0].push('Resources');
-	jst_arrNodes[0].push(['']);
+	jst_arrNodes[0].push(['javascript:',,'']);
+	
+	
 	
 	function getRecursiveDirectoryListing(file)
 	{
@@ -58,49 +59,39 @@ CodeEditor.loadProjectFiles = function()
 				var childSet = getRecursiveDirectoryListing(children[i]);
 				for (var j=0;j<childSet.length;j++)
 				{
-					if(tmpArr.length>1 && tmpArr[0]!=''){
-						jst_arrNodes[0].push(tmpArr);
-					}
-					
-					//set.push(childSet[j]);
-					sfile = childSet[j];
-					set.push(sfile);
+					set.push(childSet[j]);
 				}
 			}
-			return set;
+			return [children[i]+'<ul>'+set+'</ul>'];
 		}
 		else
 		{
-			//npfile = file.nativePath();
-			//sfile=file.nativePath().replace(resources.nativePath()+'/','');
-			return [file];
-			//tmpArr.push([sfile,['javascript:CodeEditor.edit("'+npfile+'")',,CodeEditor.ext(sfile)]]);
+			sfile=file.nativePath().replace(resources.nativePath()+'/','');
+			//return [sfile];
+			return ['<li>'+sfile+'</li>'];
 		}
 	};
 
-	var jst_arrNodes = getRecursiveDirectoryListing(resources);
-
-//alert(jst_arrNodes);
-
-
-///tmpArr = [];
+	var jobs = getRecursiveDirectoryListing(resources);
+alert(jobs);
 /*
+var tmpArrRoot = [];
 for(i=0;i<jobs.length;i++){
 	if(jobs[i].indexOf('/')>0){
 		
 	}else{
 		if(jobs[i]!='.DS_Store' && jobs[i]!='.gitignore'){
-			tmpArr.push([jobs[i],['javascript:CodeEditor.edit("'+resources.nativePath()+'/'+jobs[i]+'")',,CodeEditor.ext(jobs[i])]]);
+			sfile=resources.nativePath()+'/'+jobs[i];
+			tmpArrRoot.push([jobs[i],['javascript:CodeEditor.edit("'+sfile+'")',,CodeEditor.ext(jobs[i])]]);
 		}
 	}
 }
-jst_arrNodes[0].push(tmpArr);
+
+jst_arrNodes[0].push(tmpArrRoot);
 */
 
-
 /*
-	jst_arrNodes = 
-	[
+	jst_arrNodes = [
 		['Resources', [''],
 			[
 			
@@ -115,10 +106,10 @@ jst_arrNodes[0].push(tmpArr);
 			]
 		]
 	];
-
-
-alert(Titanium.JSON.stringify(jst_arrNodes));
 */
+
+	alert(Titanium.JSON.stringify(jst_arrNodes));
+
 	renderTree('tiui_content_left_body');
 };
 

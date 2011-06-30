@@ -22,8 +22,8 @@ body
  *****************************/
 body.mac ::-webkit-scrollbar 
 {
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
 }
 
 

@@ -59,7 +59,7 @@ function absTop(nd){
 }
 
 function nodeClick(nd){
-	x=$(nd).offset().top-122;
+	x=$(nd).offset().top-92;
 	$('#jst_sel').css('top',x+'px');
 	
 	if(jst_highlight){
@@ -509,7 +509,6 @@ function renderChildren(strData, tblCls, menu){
 		}else{
 			code.push((n == nodes.length - 1 ? "last_leaf" : "leaf") + '.png"')
 		}
-		
 		if(jst_context_menu && !n0[1][4] && !menu)
 			n0[1][4] = jst_context_menu
 
@@ -521,14 +520,13 @@ function renderChildren(strData, tblCls, menu){
 }
 
 function showMenu(strData, img, event){
-	alert('zxzz')
 	var o = window.pageYOffset
 	var offY = o ? o : document.body.scrollTop
 	var offX = o ? window.pageXOffset : document.body.scrollLeft
 	
 	jst_cm.innerHTML = renderChildren(strData + "[1][4]", "menu", true)
 	
-	jst_cm.style.top = offY + event.clientY + "px"
+	jst_cm.style.top = (offY-92) + event.clientY + "px"
 	jst_cm.style.left = offX + event.clientX + "px"
 	jst_cm.style.visibility = ""
 	
