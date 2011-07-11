@@ -83,8 +83,14 @@
 					}
 				}
 			}
-			// S/K - stop or Kill
-			if ((event.ctrlKey || event.metaKey) && (event.keyCode == 83 || event.keyCode == 75)) {
+			if ((event.ctrlKey || event.metaKey) && event.keyCode == 83) {
+				if($('#code_editor').is(":visible"))
+				{
+					alert('save');
+				}
+			}
+			// K - Kill
+			if ((event.ctrlKey || event.metaKey) && event.keyCode == 75) {
 				if($('#desktop_packaging').is(":visible"))
 				{
 					if($('#desktop_package_detail').is(":visible"))

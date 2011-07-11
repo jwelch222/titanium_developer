@@ -36,79 +36,34 @@ CodeEditor.loadProjectFiles = function()
 {
 	CodeEditor.currentProject = Projects.getProject();
 	var resources = Titanium.Filesystem.getFile(CodeEditor.currentProject.dir,"Resources");
-	
+	sysSep = Titanium.Filesystem.getSeparator();
 
-	jst_arrNodes = [];
-	tmpArr = [];
-	
-	
-	jst_arrNodes.push([]);
-	jst_arrNodes[0].push('Resources');
-	jst_arrNodes[0].push(['javascript:',,'']);
-	
-	
-	
-	function getRecursiveDirectoryListing(file)
-	{
-		if (file.isDirectory())
-		{
+
+	function getRecursiveDirectoryListing(file){
+		if (file.isDirectory()){
 			var set = [];
 			var children = file.getDirectoryListing();
-			for (var i=0;i<children.length;i++)
-			{
+			children.sort();
+			for(var i=0;i<children.length;i++){
 				var childSet = getRecursiveDirectoryListing(children[i]);
 				for (var j=0;j<childSet.length;j++)
 				{
 					set.push(childSet[j]);
 				}
 			}
-			return [children[i]+'<ul>'+set+'</ul>'];
-		}
-		else
-		{
-			sfile=file.nativePath().replace(resources.nativePath()+'/','');
-			//return [sfile];
-			return ['<li>'+sfile+'</li>'];
-		}
-	};
-
-	var jobs = getRecursiveDirectoryListing(resources);
-alert(jobs);
-/*
-var tmpArrRoot = [];
-for(i=0;i<jobs.length;i++){
-	if(jobs[i].indexOf('/')>0){
-		
-	}else{
-		if(jobs[i]!='.DS_Store' && jobs[i]!='.gitignore'){
-			sfile=resources.nativePath()+'/'+jobs[i];
-			tmpArrRoot.push([jobs[i],['javascript:CodeEditor.edit("'+sfile+'")',,CodeEditor.ext(jobs[i])]]);
+			sfile=file.nativePath().split(sysSep);
+			sfile=sfile[sfile.length-1];
+			return [[sfile,['javascript:_foo()',null,'folder'],set]];
+		}else{
+			sfile=file.nativePath().split(sysSep);
+			sfile=sfile[sfile.length-1];
+			return [[sfile,['javascript:CodeEditor.edit("'+file.nativePath()+'")',null,CodeEditor.ext(sfile)]]];
 		}
 	}
-}
 
-jst_arrNodes[0].push(tmpArrRoot);
-*/
 
-/*
-	jst_arrNodes = [
-		['Resources', [''],
-			[
-			
-				['Characters', ['javascript:_foo()',,'folder'],
-					[
-						['Homer Simpson', ['javascript:alert("No!")',,'code']],
-						['Maggie Simpson', ['javascript:alert("snhk snhk!")',,'text']]
-					]
-	
-			
-				]
-			]
-		]
-	];
-*/
-
-	alert(Titanium.JSON.stringify(jst_arrNodes));
+	jst_arrNodes = [];
+	jst_arrNodes = getRecursiveDirectoryListing(resources);
 
 	renderTree('tiui_content_left_body');
 };
@@ -227,7 +182,7 @@ CodeEditor.edit = function(file)
 		}
 	}
 	if(document.getElementById('codeeditor').innerHTML==''){
-		alert('This type of file cannot be edited');
+		alert('This file type cannot be edited');
 	}
 
 }
