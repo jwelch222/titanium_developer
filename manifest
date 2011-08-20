@@ -7,7 +7,7 @@
 #desc:Titanium Developer is a cool new app created by Appcelerator
 #type:desktop
 runtime:1.1.0
-mobilesdk:1.2.0
+mobilesdk:1.7.2
 sdk:1.1.0
 tiapp:1.1.0
 tifilesystem:1.1.0

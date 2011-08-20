@@ -651,11 +651,18 @@ Titanium.UpdateManager.onupdate = function(details)
 	TiDev.messageArea.showDefaultMessage();
 };
 
+
+
+
+//http://api.appcelerator.net/p/v1/release-download?os=osx&osver=11.1.0&tiver=1.2.0&mid=dc46290516e8638f17852f2e52ef1359&aid=com.adrianopaladini.tidevcommunity&guid=89bdfb92%2D72de%2D478f%2D9413%2Db2e6bcd682d2&ostype=32bit&osarch=x86_64&name=sdk&version=1.2.0&uuid=FF71038E-3CD6-40EA-A1C2-CFEE1D284CEA
+
 //
 // Register SDK Update listeners
 //
 Titanium.UpdateManager.startMonitor(['sdk','mobilesdk'],function(details)
 {
+	
+	alert(details);
 	switch(details.guid)
 	{
 		// mobile

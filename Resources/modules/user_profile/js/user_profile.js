@@ -136,6 +136,27 @@ UserProfile.updateRow = function()
 	
 	// update Android SDK
 	Projects.updateAndroidSDKLoc($('#user_android_sdk').val());
+	
+	
+	
+	aceChangeTheme($('#aceTheme').val());
+	aceChangeFontSize($('#aceFont').val());
+	var dbrow;
+	try
+	{
+		dbrow = TiDev.db.execute('SELECT * from ACE');
+	}
+	catch(e)
+	{
+		TiDev.db.execute('CREATE TABLE ACE (theme TEXT, font_size TEXT)');
+	}
+	dbrow = TiDev.db.execute('SELECT * from ACE');
+	if(dbrow.isValidRow()){
+		TiDev.db.execute('UPDATE ACE SET theme = ?, font_size = ?',$('#aceTheme').val(),$('#aceFont').val());
+	}else{
+		TiDev.db.execute('INSERT INTO ACE (theme, font_size) VALUES (?,?)',$('#aceTheme').val(),$('#aceFont').val());
+	}
+	
 };
 
 //
@@ -155,6 +176,24 @@ UserProfile.setFormData = function()
 	$('#user_profile_password').get(0).type = 'password';
 	$('#save_profile_button').removeClass('disabled');
 	$('#user_android_sdk').val(Projects.getAndroidSDKLoc());
+	
+	
+	var dbrow;
+	try
+	{
+		dbrow = TiDev.db.execute('SELECT * from ACE');
+		aceThemeSelected = "ace/theme/"+dbrow.fieldByName('theme');
+		aceFontSize = dbrow.fieldByName('font_size');
+		
+	}
+	catch(e)
+	{
+	}
+	aceThemeToSelect=aceThemeSelected.split('/')[2];
+	$('#aceTheme').val(aceThemeToSelect);
+	$('#aceFont').val(aceFontSize);
+	
+	
 };
 
 UserProfile.setupView = function()

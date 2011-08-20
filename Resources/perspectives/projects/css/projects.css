@@ -26,8 +26,9 @@
 #projects .frame, #user_profile .frame
 {
 	border-radius: 5px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
+	/*-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));*/
+	background-color:#222;
 }
 #projects .option
 {
@@ -119,8 +120,9 @@
 	top:-30px; 
 	margin-left:-10px;
 	left:-2px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
+	/*-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));*/
+	background-color:#222;
 }
 #login_signup .tab
 {
@@ -147,8 +149,9 @@
 {
 	/*background-color:#393939;*/
 	text-decoration:none;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.75)));
+	/*-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.75)));*/
+	background-color:#222;
 }
 #login_signup .text
 {

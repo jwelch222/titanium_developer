@@ -24,7 +24,8 @@
 {
 	margin: 0 auto;
 	border-radius: 5px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));
+	/*-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px inset, rgba(0, 0, 0, 0.496094) 0px 1px 1px inset, rgba(255, 255, 255, 0.496094) 0px -1px 1px inset;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.496094)), to(rgba(0, 0, 0, 0.246094)));*/
+	background-color:#222;
 }
 

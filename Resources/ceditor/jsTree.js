@@ -59,19 +59,20 @@ function absTop(nd){
 }
 
 function nodeClick(nd){
-	x=$(nd).offset().top-92;
-	$('#jst_sel').css('top',x+'px');
+	//x=$(nd).offset().top-92;
+	//$('#jst_sel').css('top',x+'px');
+	
 	
 	if(jst_highlight){
 		if(jst_activeNode){
 			jst_activeNode.style.color = ""
-			//jst_activeNode.style.backgroundImage='';
-			//jst_activeNode.style.backgroundColor = ""
+			jst_activeNode.style.backgroundImage='';
+			jst_activeNode.style.backgroundColor = ""
 			nd.style.padding = ""
 		}
 		nd.style.color = jst_highlight_color
-		//nd.style.backgroundColor = jst_highlight_bg
-		//nd.style.backgroundImage='url('+jst_image_folder+'sel.png)';
+		nd.style.backgroundColor = jst_highlight_bg
+		nd.style.backgroundImage='url('+jst_image_folder+'sel.png)';
 		nd.style.padding = jst_highlight_padding
 		jst_activeNode = nd
 	}
@@ -540,7 +541,9 @@ function hideMenu(){
 function renderTree(jst_containerTmp){
 	jst_container = jst_containerTmp
 //	TestDate = new Date();TestStartZeit=TestDate.getTime();
-	document.getElementById(jst_container).innerHTML='<div id="jst_sel"></div><table cellspacing="0" cellpadding="0" border="0" style="position:relative;top:-20px;left:6px;"><tr><td colspan="2"><span id="jst_rootFolder"></span></td></tr></table><div style="position:absolute;top:-100;left:-100" id="jst_contextMenu"></div>';
+//	document.getElementById(jst_container).innerHTML='<div id="jst_sel"></div><table cellspacing="0" cellpadding="0" border="0" style="position:relative;top:-20px;left:6px;"><tr><td colspan="2"><span id="jst_rootFolder"></span></td></tr></table><div style="position:absolute;top:-100;left:-100" id="jst_contextMenu"></div>';
+	document.getElementById(jst_container).innerHTML='<table cellspacing="0" cellpadding="0" border="0" style="position:relative;top:-20px;left:6px;"><tr><td colspan="2"><span id="jst_rootFolder"></span></td></tr></table><div style="position:absolute;top:-100;left:-100" id="jst_contextMenu"></div>';
+
 
 	renderNode(jst_data, document.getElementById("jst_rootFolder"))
 	renderNode(jst_data + "[0][2]", document.getElementById("jst_rootImage"))

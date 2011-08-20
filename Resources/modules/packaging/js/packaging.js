@@ -2507,6 +2507,7 @@ PackageProject.setupDesktopView = function()
 				$('#launch_app_button').removeClass('disabled');
 				
 			});
+					
 			PackageProject.currentAppPID.launch();
 		}
 		

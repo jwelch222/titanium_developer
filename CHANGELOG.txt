@@ -1,9 +1,22 @@
 TODO:
 	-Tabs in code-editor to edit multiple files
 	-alert of changed files to save
+	
+1.3.03 (2011-08-20) - (Not closed Yet)
+
+	- Fix mobileSDK download to 1.7.2
+	- Fix File List selector 
+	- Add options to select Font size and Theme for Code Editor
+	- Code Editor now Save files correctly (using CRTL+S or COMMAND+S)
+	- Change few options on Code Editor
+	- Ignore ".DS_Store" and ".gitignore" files os File List of Code Editor
+	- Few changes in theme to make lower use of memory in windows
+	- Use of "~/Library/Application Support" folder (User folder) to save SDKs to full compatibility with Mac OS Lion
+	- Change background of images preview
+	- Add a custom toolbar in Code Editor for future buttons (New Folder, New File, Copy Image, Save)
 
 
-1.3.02 (2011-07-10) - (Not closed Yet)
+1.3.02 (2011-07-10)
 	
 	-Providing installation packages in page "http://api.appcelerator.net/p/pages/app_page?token=m4rZLSv6"
 	-Add Keyboard shotcut for "Fullscreen" function

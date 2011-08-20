@@ -1,5 +1,5 @@
 CodeEditor = {};
-//CodeEditor.buttonBar = new TiUI.BlackButtonBar();
+CodeEditor.buttonBar = new TiUI.BlackButtonBar();
 
 
 //
@@ -14,9 +14,11 @@ CodeEditor.setupView = function()
 	TiDev.contentLeftShowButton.hide();
 	
 	
-	/*
-	CodeEditor.buttonBar.configure({id:'tiui_content_submenu',tabs:['<u>S</u>ave',' <img src="ceditor/images/add_folder.png">  Add new Folder ',' <img src="ceditor/images/add_code.png">  Add new File '],active:0});
-	CodeEditor.buttonBar.appendContent('<img style="position:absolute;left:15px;top:6px;cursor:pointer" title="refresh" id="feeds_refresh" src="modules/feeds/images/refresh.png"/>');
+	
+	CodeEditor.buttonBar.configure({id:'tiui_content_submenu',tabs:[],active:0});
+	
+	//CodeEditor.buttonBar.configure({id:'tiui_content_submenu',tabs:['<u>S</u>ave',' <img src="ceditor/images/add_folder.png">  Add new Folder ',' <img src="ceditor/images/add_code.png">  Add new File '],active:0});
+	//CodeEditor.buttonBar.appendContent('<img style="position:absolute;left:15px;top:6px;cursor:pointer" title="refresh" id="feeds_refresh" src="modules/feeds/images/refresh.png"/>');
 	
 	CodeEditor.buttonBar.addListener(function(idx)
 	{
@@ -24,7 +26,7 @@ CodeEditor.setupView = function()
 		
 
 	});
-	*/
+	
 	
 	
 	
@@ -57,7 +59,11 @@ CodeEditor.loadProjectFiles = function()
 		}else{
 			sfile=file.nativePath().split(sysSep);
 			sfile=sfile[sfile.length-1];
-			return [[sfile,['javascript:CodeEditor.edit("'+file.nativePath()+'")',null,CodeEditor.ext(sfile)]]];
+			if(sfile!='.DS_Store' && sfile!='.gitignore'){
+				return [[sfile,['javascript:CodeEditor.edit("'+file.nativePath()+'")',null,CodeEditor.ext(sfile)]]];
+			}else{
+				return '';
+			}
 		}
 	}
 
@@ -115,24 +121,37 @@ CodeEditor.ext = function(t)
 	return r;
 }
 
+function aceChangeTheme(th){
+	aceThemeSelected = 'ace/theme/'+th;
+	aceeditor.setTheme(aceThemeSelected);
+}
+function aceChangeFontSize(sz){
+	aceFontSize = sz;
+}
+
+var aceeditor;
+var aceFontSize = 12;
+var aceThemeSelected = 'ace/theme/twilight';
 
 CodeEditor.edit = function(file)
 {
 	document.getElementById('codeeditor').innerHTML='';
 	if(CodeEditor.ext(file)=='css' || CodeEditor.ext(file)=='html' || CodeEditor.ext(file)=='code' || CodeEditor.ext(file)=='json' || CodeEditor.ext(file)=='php' || CodeEditor.ext(file)=='python' || CodeEditor.ext(file)=='ruby' || CodeEditor.ext(file)=='xml'){
 	
+		document.getElementById('codeeditor').style.fontSize=aceFontSize+'px';
+		aceeditor = ace.edit("codeeditor");
+		aceeditor.renderer.setShowPrintMargin(false);
+		aceeditor.renderer.setShowGutter(true);
+	    aceeditor.setTheme(aceThemeSelected);
+
+	
+		selectedFilePath = file;
 		var ofile = Titanium.Filesystem.getFile(file);
 		str = ofile.read();
 		str = str.toString();
-		str = str.replace(/</g,'&lt;');
-		str = str.replace(/>/g,'&gt;');
-		document.getElementById('codeeditor').innerHTML=str;
+		aceeditor.getSession().setValue(str);
 
 
-		var aceeditor = ace.edit("codeeditor");
-		aceeditor.renderer.setShowPrintMargin(false);
-		aceeditor.renderer.setShowGutter(true);
-	    aceeditor.setTheme("ace/theme/twilight");
 
 
 	    var cssMode = require("ace/mode/css").Mode;
@@ -187,6 +206,12 @@ CodeEditor.edit = function(file)
 
 }
 
+var selectedFilePath = '';
+function saveSelectedFile(){
+	str = aceeditor.getSession().getValue();
+	var ofile = Titanium.Filesystem.getFile(selectedFilePath);
+	ofile.write(str);
+}
 
 
 
@@ -195,17 +220,21 @@ CodeEditor.eventHandler = function(event)
 {
 	if (event == 'focus')
 	{
+		$('#tiui_content_body').css({background:'url(../../images/bgtransp.gif)'});
 		CodeEditor.setupView();
 	}
 	else if (event == 'load')
 	{
+		$('#tiui_content_body').css({background:'url(../../images/bgtransp.gif)'});
 		CodeEditor.setupView();
 	}
 	else if (event == 'blur')
 	{
-		//CodeEditor.buttonBar.hide();
+		$('#tiui_content_body').css({background:'url(../../images/texturegrey.png)'});
+		CodeEditor.buttonBar.hide();
 	}
 };
+
 
 
 // register module
