@@ -123,26 +123,41 @@ CodeEditor.ext = function(t)
 
 function aceChangeTheme(th){
 	aceThemeSelected = 'ace/theme/'+th;
-	aceeditor.setTheme(aceThemeSelected);
+	//aceeditor.setTheme(aceThemeSelected);
 }
 function aceChangeFontSize(sz){
 	aceFontSize = sz;
 }
 
-var aceeditor;
+var aceeditor; // = ace.edit("codeeditor");
 var aceFontSize = 12;
 var aceThemeSelected = 'ace/theme/twilight';
+
+var ddbrow;
+try
+{
+	ddbrow = TiDev.db.execute('SELECT * from ACE');
+	if(ddbrow.isValidRow()){
+		aceThemeSelected = "ace/theme/"+ddbrow.fieldByName('theme');
+		aceFontSize = ddbrow.fieldByName('font_size');
+	}
+}
+catch(e){}
 
 CodeEditor.edit = function(file)
 {
 	document.getElementById('codeeditor').innerHTML='';
 	if(CodeEditor.ext(file)=='css' || CodeEditor.ext(file)=='html' || CodeEditor.ext(file)=='code' || CodeEditor.ext(file)=='json' || CodeEditor.ext(file)=='php' || CodeEditor.ext(file)=='python' || CodeEditor.ext(file)=='ruby' || CodeEditor.ext(file)=='xml'){
 	
-		document.getElementById('codeeditor').style.fontSize=aceFontSize+'px';
+		
+		$('#codeeditor').css({background:'#fff'});
+		$('#tiui_content_body').css({background:'url(../../images/texturegrey.png)'});
+		
 		aceeditor = ace.edit("codeeditor");
 		aceeditor.renderer.setShowPrintMargin(false);
 		aceeditor.renderer.setShowGutter(true);
 	    aceeditor.setTheme(aceThemeSelected);
+		document.getElementById('codeeditor').style.fontSize=aceFontSize+'px';
 
 	
 		selectedFilePath = file;
@@ -188,8 +203,10 @@ CodeEditor.edit = function(file)
 			aceeditor.getSession().setMode(new xmlMode());
 		}	
 
-	
+
 	}else{
+		$('#codeeditor').css({background:'transparent'});
+		$('#tiui_content_body').css({background:'url(../../images/bgtransp.gif)'});
 		if(CodeEditor.ext(file)=='music'){
 			document.getElementById('codeeditor').innerHTML='<audio style="width:100%;" src="file://'+file+'" controls="controls"></audio>';
 		}
@@ -199,6 +216,7 @@ CodeEditor.edit = function(file)
 		if(CodeEditor.ext(file)=='picture'){
 			document.getElementById('codeeditor').innerHTML='<img src="file://'+file+'" />';
 		}
+		
 	}
 	if(document.getElementById('codeeditor').innerHTML==''){
 		alert('This file type cannot be edited');

@@ -662,7 +662,6 @@ Titanium.UpdateManager.onupdate = function(details)
 Titanium.UpdateManager.startMonitor(['sdk','mobilesdk'],function(details)
 {
 	
-	alert(details);
 	switch(details.guid)
 	{
 		// mobile
